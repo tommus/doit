@@ -1,0 +1,42 @@
+apply plugin: 'com.android.application'
+
+android {
+  buildToolsVersion "24.0.0"
+
+  buildTypes {
+    release {
+      minifyEnabled false
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+    }
+  }
+
+  buildTypes.each {
+    it.buildConfigField 'String', 'FIREBASE_URL', FirebaseUrl
+  }
+
+  compileSdkVersion 24
+
+  defaultConfig {
+    applicationId "com.todev.doit"
+    minSdkVersion 16
+    targetSdkVersion 24
+    versionCode 1
+    versionName "1.0"
+  }
+
+  packagingOptions {
+    exclude 'META-INF/LICENSE'
+    exclude 'META-INF/LICENSE-FIREBASE.txt'
+    exclude 'META-INF/NOTICE'
+  }
+}
+
+dependencies {
+  compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile 'com.android.support:appcompat-v7:24.1.1'
+  compile 'com.firebase:firebase-client-android:2.5.2'
+  compile 'com.google.firebase:firebase-auth:9.4.0'
+}
+
+// Leave at the bottom of the file.
+apply plugin: 'com.google.gms.google-services'

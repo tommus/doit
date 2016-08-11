@@ -1,0 +1,5 @@
+# Android
+/build
+
+# Firebase configuration file
+google-services.json

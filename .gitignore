@@ -1,0 +1,18 @@
+# IDE
+*.iml
+.idea/
+
+# CI
+.gradletasknamecache
+.gradle/
+gradle/*.jar
+
+# Android
+build/
+/captures
+
+# Project specific
+local.properties
+
+# System specific
+.DS_Store
