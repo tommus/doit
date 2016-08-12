@@ -18,6 +18,7 @@ import com.todev.doit.Constants;
 import com.todev.doit.R;
 import java.util.HashMap;
 import java.util.Map;
+import org.joda.time.LocalDateTime;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -65,9 +66,9 @@ public class LoginActivity extends AppCompatActivity {
               if (task.isSuccessful()) {
                 FirebaseUser user = task.getResult().getUser();
 
-                Map<String, Object> map = new HashMap<>();
-                map.put("email", user.getEmail());
-                ref.child("users").child(user.getUid()).setValue(map);
+                String lastLogin = LocalDateTime.now().toString("yyyy/MM/dd HH:mm:ss");
+                ref.child("users").child(user.getUid()).child("email").setValue(user.getEmail());
+                ref.child("users").child(user.getUid()).child("last_login").setValue(lastLogin);
 
                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

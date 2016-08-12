@@ -36,6 +36,7 @@ dependencies {
   compile 'com.android.support:appcompat-v7:24.1.1'
   compile 'com.firebase:firebase-client-android:2.5.2'
   compile 'com.google.firebase:firebase-auth:9.4.0'
+  compile 'joda-time:joda-time:2.9.4'
 }
 
 // Leave at the bottom of the file.
