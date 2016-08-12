@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:paddingBottom="@dimen/margin_medium"
     android:paddingLeft="@dimen/margin_medium"
     android:paddingRight="@dimen/margin_medium"
@@ -12,4 +13,35 @@
     tools:context="com.todev.doit.activity.MainActivity"
     >
 
-</RelativeLayout>
+  <ListView
+      android:id="@+id/items"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="1"
+      />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_gravity="bottom"
+      android:orientation="vertical"
+      >
+
+    <EditText
+        android:id="@+id/todo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.EditText"
+        />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add item"
+        style="@style/Base.Widget.AppCompat.Button.Colored"
+        />
+
+  </LinearLayout>
+
+</LinearLayout>
